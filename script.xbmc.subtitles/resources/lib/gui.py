@@ -107,6 +107,9 @@ class GUI( xbmcgui.WindowXMLDialog ):
     else:
       self.year = ""
 
+    if self.season == "":
+        title, self.season, self.episode = regex_tvshow(False, self.title)
+
     self.file_original_path = urllib.unquote ( movieFullPath )             # Movie Path
 
     if (__addon__.getSetting( "fil_name" ) == "true"):                     # Display Movie name or search string
